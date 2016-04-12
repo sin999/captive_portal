@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>404 front page </title>
+<script language="Javascript">
+function xmlhttpPost(strURL) {
+    updatepage('str');
+    var xmlHttpReq = false;
+    var self = this;
+    // Mozilla/Safari
+    if (window.XMLHttpRequest) {
+        self.xmlHttpReq = new XMLHttpRequest();
+    }
+    // IE
+    else if (window.ActiveXObject) {
+        self.xmlHttpReq = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    self.xmlHttpReq.open('POST', strURL, true);
+    self.xmlHttpReq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    self.xmlHttpReq.onreadystatechange = function() {
+        if (self.xmlHttpReq.readyState == 4) {
+            updatepage(self.xmlHttpReq.responseText);
+	    
+        }
+    }
+    self.xmlHttpReq.send(getquerystring());
+    setTimeout('location.reload(true)',3000);
+}
+
+
+function getquerystring() {
+    return "no query";
+}
+
+function updatepage(str){
+    document.getElementById("result").innerHTML = 'В течении пяти секунд произодет перенаправление на запрошенную страницу';
+}
+</script>
+</head> 
+   <boby>
+    404 404 404 404    
+    <div id="result">
+    
+    <H1> Лучшее предложение по услуге Кабельне телевидение в Башкирии от компании ТТК</H1>
+	<form>
+		<input value="Продолжить работу" type="button" onclick='JavaScript:xmlhttpPost("v1e12wcngdas1v8efp7nxq3evce2jkrzyshg8s16/act.php")'></p>	
+	</form>
+    </div>
+    </boby>
+</html>    

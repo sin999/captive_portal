@@ -1,0 +1,127 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type='text/javascript' src='/v1e12wcngdas1v8efp7nxq3evce2jkrzyshg8s17/js/sinscripts.js'></script>
+	<style type='text/css'>
+	body { 
+		background: url(/v1e12wcngdas1v8efp7nxq3evce2jkrzyshg8s1/bg.png); repeat-y
+	}
+	#body-main{
+		background: #FFFFFF;
+		width:800px;
+		margin: 0 auto;
+		border: 1px solid #BBBBBB;
+		box-shadow: 0 0 20px;
+		padding-top: 30px;
+		paddind-bottom: 30px;
+
+	}
+	.body-c { 
+		padding-left: 15px; padding-right: 15px;
+		background: #FFFFFF;
+		margin: 0 auto;
+		font-family: Arial, Helvetica; 
+	}
+	#logo-ttk { 
+		float:left;
+		padding-bottom: 30px;
+	}
+	#body-bottom{
+		padding-top:20px; padding-bottom:20px;
+	}
+	#reklama1{ 
+		font-size: 30px; color:red; text-align: center;
+		padding-bottom:5px;
+		padding-top:0px;
+	}
+	#form-zagolovok1{
+		padding-top: 0px;
+		font-size: 40px; font-weight:bold; text-align: center;
+	}
+	#spacer{
+		padding-top: 0px;
+		padding-bottom:	0px;
+		text-align: center;
+	}
+
+@media screen and (orientation: landscape) {
+	.form-dostup-tlf{
+		padding-top: 5px; padding-bottom: 5px; padding-left: 30px; padding-right: 30px;
+		box-shadow: 0 0 10px;
+		border: 0px solid #000000;
+		background: #DCDCDC;
+		-webkit-appearance: none;
+		font-size: 48px;
+		margin-top:15px;
+		text-align:center;
+	}
+	.notification{
+		font-size: 20px;
+	}
+
+	.form-dostup-submit{
+		padding-top: 5px; padding-bottom: 5px; padding-left: 60px; padding-right: 60px;
+		border-radius:5px;
+		background: #e2001a;
+		font-size: 32px;
+		color: white;
+		margin-top:15px;
+		text-align:center;
+		
+	}
+}
+@media screen and (orientation: portrait) {
+	.form-dostup-tlf{
+		padding-top: 5px; padding-bottom: 5px; padding-left: 30px; padding-right: 30px;
+		box-shadow: 0 0 10px;
+		border: 0px solid #000000;
+		background: #DCDCDC;
+		-webkit-appearance: none;
+		font-size: 32px;
+		margin-top:15px;
+		text-align:center;
+	}
+	.notification{
+		font-size: 20px;
+	}
+	.form-dostup-submit{
+		padding-top: 5px; padding-bottom: 5px; padding-left: 60px; padding-right: 60px;
+		border-radius:5px;
+		background: #e2001a;
+		font-size: 48px;
+		color: white;
+		margin-top:15px;
+		text-align:center;
+		
+	}
+}
+</style>
+
+
+</head>
+
+<body>
+	<div id='body-main'>
+		<div id='body-top' class='body-c'>
+			<div id='logo-ttk'><img src='/v1e12wcngdas1v8efp7nxq3evce2jkrzyshg8s17/img/top1.png'></div>
+		</div>
+		<div id='body-medium' class='body-c'>
+			<div id="form-zagolovok1">
+				<form id='form-dostup' name='form-dostup' action='#' method='post'>
+				    <div id='phone_div' class='phone_div'>
+					<input type='text' id='phone' class='form-dostup-tlf' maxlength='12' placeholder="+79XXXXXXXXX"/>
+					<br/>
+					<div id='notification' class='notification'>
+					</div>
+				    </div>
+					<input type='button' id='form-dostup-submit123' class='form-dostup-submit' name='form-dostup-submit' value='Получить доступ'  onclick='openAccessPhone("/v1e12wcngdas1v8efp7nxq3evce2jkrzyshg8s16/html/phone_collector_free.php",document.getElementById("phone").value)'>
+				</form>
+			</div>
+		</div>
+		<div id='spacer'><img src="/v1e12wcngdas1v8efp7nxq3evce2jkrzyshg8s17/img/spacer.png"></div>
+		<div id='body-bottom' class='body-c'>
+			<div id='reklama1'><img src="/v1e12wcngdas1v8efp7nxq3evce2jkrzyshg8s17/img/banner.png"></div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+server {
+    listen       ####-ip-address-####:8890;
+    server_name  _;
+    charset UTF-8;
+
+    #Static content
+    location / {
+        rewrite ^\/([^\/]+)\/(.*) /$1/content/$2 break;
+        root   /var/www/html/captive_portal/project_available/;
+    }
+}
+

@@ -1,0 +1,33 @@
+server {
+    listen      ####-ip-address-####:####-port-####;
+    server_name  _;
+    charset UTF-8;
+
+    #Proxy to Apache (scripting)
+    location /v1e12wcngdas1v8efp7nxq3evce2jkrzyshg8s16/ {
+        rewrite ^/v1e12wcngdas1v8efp7nxq3evce2jkrzyshg8s16/(.*)$ /captive_portal/project_enabled/port####-port-####/content/$1 break;
+        proxy_pass       http://localhost;
+        proxy_set_header Host      $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Real-PORT $remote_port;
+    }
+
+    #Static content
+    location /v1e12wcngdas1v8efp7nxq3evce2jkrzyshg8s17/ {
+        rewrite ^/v1e12wcngdas1v8efp7nxq3evce2jkrzyshg8s17/(.*)$ /$1 break;
+        root   /var/www/html/captive_portal/project_enabled/port####-port-####/content/;
+    }
+
+    location @index.php {
+        rewrite ^.*$ /v1e12wcngdas1v8efp7nxq3evce2jkrzyshg8s16/html/index.php;
+    }
+
+    location /html/index.html {
+        rewrite ^.*$ /v1e12wcngdas1v8efp7nxq3evce2jkrzyshg8s17/html/index.html;
+    }
+
+    location / {
+        root   /var/www/html/captive_portal/project_enabled/port####-port-####/content/;
+        try_files /html/index.html  @index.php;
+    }
+}
