@@ -1,7 +1,6 @@
 <?php
 $conf=parse_ini_file("../../project.conf");
 $common_conf=parse_ini_file($conf['commons_path'].$conf['common_conf']);
-
 include_once($conf['commons_path'].$conf['php_nas_manager']);
 $nasListDir="../../".$conf['nases_confs_dir'];
 

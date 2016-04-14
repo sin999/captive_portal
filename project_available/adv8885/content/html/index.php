@@ -1,24 +1,36 @@
 <?php
+include_once("common.php");
+echo $remote_ip." ".$remote_port;
+echo $services;
+$static_content_url_PLACEHOLDER=$project_conf['static_content_url_PLACEHOLDER'];
+$script_url_PLACEHOLDER=$project_conf['script_url_PLACEHOLDER'];
 
-$conf=parse_ini_file("../../project.conf");
-$common_conf=parse_ini_file($conf['commons_path'].$conf['common_conf']);
-header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1.
-header("Pragma: no-cache"); // HTTP 1.0.
-header("Expires: 0"); // Proxies.
+$static_content_url=$project_conf['static_content_url'];
+$scripts_url=$project_conf['scripts_url'];
 
+$content =file_get_contents("".$project_conf['index_content']);
 
-$static_content_url_PLACEHOLDER=$conf['static_content_url_PLACEHOLDER'];
-$script_url_PLACEHOLDER=$conf['###script_url_PLACEHOLDER'];
-
-$static_content_url=$conf['static_content_url'];
-$scripts_url=$conf['scripts_url'];
-
-$content =file_get_contents("".$conf['index_content']);
-
-$content = str_replace($static_content_url_PLACEHOLDER,$common_conf['portal_permanent_url'].$conf['project_name'].$static_content_url,$content);
+$content = str_replace($static_content_url_PLACEHOLDER,$portal_conf['portal_permanent_url'].$project_conf['project_name'].$static_content_url,$content);
 $content = str_replace($script_url_PLACEHOLDER,$scripts_url_url,$content);
 
 echo $content; 
-include_once("remove_reclama.php");
+
+
+if(isset($manager)){
+    //рассчитать PBHK (ключи идентифицирующий сессию)
+    $PBHK=$manager->calcPBHKbyIpPort($remote_ip,$remote_port);
+    //Получить из Браса  логин с которым авторизировался абонент (обычно нобходимо для логирования событий)
+    // при обращении к скрипту мы не знаем логина а имеем только ключ сессии
+    //$sessionLogin=$manager->getLogin4PBHK($PBHK);
+    // Удаляет сервисы (в переменной наименования сервисов через запятую)
+    echo $PBHK."".$services;
+    $manager->removeServicesPBHK($PBHK,$services);
+    // Добавляет сервисы к сессии (в переменной наименования сервисов через запятую)
+    //$manager->addServicesPBHK($PBHK,$services);
+    // Дает комманду Брасу провести попытку авторизации сессии с указанным логином и паролем.
+    //$manager->sessionLogonPBHK($PBHK,$login,$password);
+}else{
+ echo "Manager is null!!!!";
+}
 
 ?>

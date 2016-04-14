@@ -1,0 +1,6 @@
+apache  ALL=(root) NOPASSWD: /var/www/html/captive_portal/nas_utils/coa_service_manager.sh
+apache  ALL=(root) NOPASSWD:  /var/www/html/captive_portal/nas_utils/logon.sh
+apache  ALL=(root) NOPASSWD:  /var/www/html/captive_portal/nas_utils/getSessionParams.sh
+
+
+

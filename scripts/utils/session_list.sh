@@ -1,5 +1,7 @@
 #read config
-source ../../project.conf
+#project_dir=$(dirname $(dirname $PWD))
+project_dir=$(dirname $PWD)
+source $project_dir/project.conf
 mysql radius -N -e " select distinct acctsessionid,nasipaddress,username,actions_table.last_shown "`
 	`" from  "$actions_table"  actions_table "`
 	`" left join radacct on radacct.username=actions_table.login "`

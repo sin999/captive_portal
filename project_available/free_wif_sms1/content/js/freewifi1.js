@@ -65,7 +65,7 @@ function sendPassword(phoneNumber,callback){
     , 3000);
     var request = $.ajax({
 	cache : false,
-	url: "/v1e12wcngdas1v8efp7nxq3evce2jkrzyshg8s16/free_wifi_new/supp/sendPass4Number.php",
+	url: "/v1e12wcngdas1v8efp7nxq3evce2jkrzyshg8s16/html/sendPass4Number.php",
 	method: "GET",
 	data: { phone_number : phoneNumber },
 	dataType: "html"
@@ -75,7 +75,7 @@ function sendPassword(phoneNumber,callback){
 
 function accountLogOn(authForm,callback){
     var request = $.ajax({
-	url: "/v1e12wcngdas1v8efp7nxq3evce2jkrzyshg8s16/free_wifi_new/supp/logon.php",
+	url: "/v1e12wcngdas1v8efp7nxq3evce2jkrzyshg8s16/html/logon.php",
 	method: "GET",
 	data: { phone : authForm.login,passkey:authForm.password},
 	dataType: "html"
