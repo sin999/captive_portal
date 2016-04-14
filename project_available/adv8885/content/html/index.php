@@ -21,7 +21,7 @@ if(isset($manager)){
     $PBHK=$manager->calcPBHKbyIpPort($remote_ip,$remote_port);
     //Получить из Браса  логин с которым авторизировался абонент (обычно нобходимо для логирования событий)
     // при обращении к скрипту мы не знаем логина а имеем только ключ сессии
-    //$sessionLogin=$manager->getLogin4PBHK($PBHK);
+    $sessionLogin=$manager->getLogin4PBHK($PBHK);
     // Удаляет сервисы (в переменной наименования сервисов через запятую)
     echo $PBHK."".$services;
     $manager->removeServicesPBHK($PBHK,$services);
@@ -29,8 +29,19 @@ if(isset($manager)){
     //$manager->addServicesPBHK($PBHK,$services);
     // Дает комманду Брасу провести попытку авторизации сессии с указанным логином и паролем.
     //$manager->sessionLogonPBHK($PBHK,$login,$password);
+    saveDb($project_conf,$sessionLogin);
 }else{
  echo "Manager is null!!!!";
 }
+
+
+function saveDb($conf,$login){
+        $db= new mysqli($conf['db_host'],$conf['db_login'],$conf['db_password'],$conf['db_name']);
+        $query="update ".$conf['actions_table']." as ttk_actions set ttk_actions.last_shown=now()  where   ttk_actions.login='".$login."'";
+        echo $query;
+    //    write2File($query);
+        $db->query($query);
+}
+
 
 ?>

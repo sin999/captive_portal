@@ -133,7 +133,7 @@ class NasManager {
     ##public
     function removeServicesPBHK($PBHK,$services){
 	$command="sudo ".$this->nas_utils_conf['nas_utils_path'].$this->nas_utils_conf['coa_service_manager']." -nas ".$this->nas_conf['nas_key_address_port']." -phbk ".$PBHK."  -del ".$services." > /dev/null 2>/dev/null &";
-	echo $command;
+//	echo $command;
 	exec($command);
     }
     
@@ -152,7 +152,7 @@ class NasManager {
     ##public
     function applyServicesSessionId($sess_id,$services){
 	$command="sudo ".$this->nas_utils_conf['nas_utils_path'].$this->nas_utils_conf['coa_service_manager']." -nas ".$this->nas_conf['nas_key_address_port']." -sessid ".$sess_id."  -add ".$services." > /dev/null 2>/dev/null &";
-	echo $command;
+//	echo $command;
 	exec($command);
     }
     
