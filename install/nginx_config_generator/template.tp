@@ -1,6 +1,6 @@
 server {
     listen      ####-ip-address-####:####-port-####;
-    server_name  _;
+    server_name  portal_port####-port-####;
     charset UTF-8;
 
     #Proxy to Apache (scripting)

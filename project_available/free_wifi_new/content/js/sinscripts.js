@@ -5,8 +5,19 @@ function testf(test_text){
 function openAccessPhone(strURL,phone){
     phone=normolisePhone(phone);
     if(isPhoneWellFormated(phone)){
+	
+	var request = $.ajax({
+	    url: strURL,
+	    method: "GET",
+	    data: 'phone=' + phone,
+	    dataType: "html"
+	});
+	request.done(function(msg){	    
+    	    updatepage();
+    	    setTimeout('location.reload(true)',3000);
+	});
 
-	sendAjax(strURL,'phone=' + phone);
+//	sendAjax(strURL,'phone=' + phone);
     }
     else {
 	notifyPhoneIsWrong(phone);
@@ -15,7 +26,7 @@ function openAccessPhone(strURL,phone){
 
 
 function openAccess(isPhonePut){
-    sendAjax("/v1e12wcngdas1v8efp7nxq3evce2jkrzyshg8s16/phone_collector_free.php",isPhonePut);
+    sendAjax("/v1e12wcngdas1v8efp7nxq3evce2jkrzyshg8s16/html/phone_collector_free.php",isPhonePut);
 }
 
 function isPhoneWellFormated(phone){
@@ -33,6 +44,14 @@ function notifyPhoneIsWrong(phone){
 
 
 function sendAjax(strURL,q_str){
+
+	var request = $.ajax({
+	    url: strURL,
+	    method: "GET",
+	    data: { phone : menuId },
+	    dataType: "html"
+	});
+/*
         var xmlHttpReq = false;
         var self = this;
         // Mozilla/Safari
@@ -43,7 +62,7 @@ function sendAjax(strURL,q_str){
         else if (window.ActiveXObject) {
             self.xmlHttpReq = new ActiveXObject("Microsoft.XMLHTTP");
         }
-        self.xmlHttpReq.open('POST', strURL, true);
+        self.xmlHttpReq.open('GET', strURL, true);
         self.xmlHttpReq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         self.xmlHttpReq.onreadystatechange = function() {
             if (self.xmlHttpReq.readyState == 4) {
@@ -54,6 +73,7 @@ function sendAjax(strURL,q_str){
         self.xmlHttpReq.send(q_str);
         updatepage()
         setTimeout('location.reload(true)',3000);
+*/
 }
 
 

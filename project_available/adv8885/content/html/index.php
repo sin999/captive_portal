@@ -1,7 +1,6 @@
 <?php
 include_once("common.php");
-echo $remote_ip." ".$remote_port;
-echo $services;
+
 $static_content_url_PLACEHOLDER=$project_conf['static_content_url_PLACEHOLDER'];
 $script_url_PLACEHOLDER=$project_conf['script_url_PLACEHOLDER'];
 

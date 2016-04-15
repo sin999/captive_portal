@@ -30,6 +30,8 @@ while($f = fgets(STDIN)){
 		$manager->applyServicesSessionId($target->sess_id,$services);
 		echo " > ".date("F j, Y, g:i a")." to ".$target->sess_id." (".trim($target->user_name).") services applyed ".$services."\n";
 	    }
+	}else{
+	    echo "Manager hasnot been found!";
 	}
     }
 }
