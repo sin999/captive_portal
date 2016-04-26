@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <LINK href="css/wifi.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/freewifi1.js"></script>
+    <title></title>
+</head>
+<body>
+<!--
+Состояния главной формы
+1. Новая
+2. Ошибка авторизации
+3. Выслан пароль
+4. Успешная авторизация идет переход на запрашиваемую страницу
+-->
+<button id="selectTTK">selectTTK</button>
+<button id="selectFree">selectFree</button>
+    <div id="mainform" class="regular">
+        <div id="phone_form">
+            <label id="messages"></label>
+            <div>
+                <label for="phone_number">Ваш номер телефона</label>
+                <input type="text" id="phone_number"/>
+            </div>
+            <div>
+                <button id="send_pass" >Выслать пароль на введенный номер</button>
+            </div>
+        </div>
+        <div>
+            <label for="password">Пароль доступа</label>
+            <input type="text" id="password"/>
+        </div><div>
+            <button id="log-in" >Авторизоваться</button>
+        </div>
+    </div>
+
+    <div class="hidden-messages">
+        <label id="no-message"></label>
+        <label id="wrong-number-format">Не верный формат номера! %%typedPhoneNumber%% Должно быть 10 цифр !</label>
+        <label id="password-was-sent">На номер %%typedPhoneNumber%% был выслан пароль досупа.</label>
+        <label id="password-is-being-sent">Пароль доступа отправляется на номер %%typedPhoneNumber%% .</label>
+        <label id="login-success">Авторизация прошла успешно! В течении 15 секунд вы будете перенаправленны на запрашеваемую страницу</label>
+        <label id="login-fail"> Произошла ошибка авторизации попробуйте еще раз.</label>
+        <label id="wrong-password-format"> Не верный формат пароля.</label>
+    </div>
+</body>
+</html>

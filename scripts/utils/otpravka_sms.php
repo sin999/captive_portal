@@ -1,4 +1,8 @@
 <?php
+
+
+
+
 function otpravka_sms_gsmgw($matches1,$smstxt) {
         $mess_otpravka="";
         $number_all="";

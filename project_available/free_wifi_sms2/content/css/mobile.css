@@ -1,0 +1,149 @@
+/* только для Internet Explorer 4+ */
+@font-face {
+    font-family: PT Sans;
+    src: url(/v1e12wcngdas1v8efp7nxq3evce2jkrzyshg8s17/fonts/PTS55F.ttf);
+}
+
+/* далее для всех остальных браузеров */
+@font-face {
+    font-family: PT Sans;
+    src: local("PT Sans"),
+    url(/v1e12wcngdas1v8efp7nxq3evce2jkrzyshg8s17/fonts/PTS55F.ttf) format("truetype");
+}
+
+/* только для Internet Explorer 4+ */
+@font-face {
+    font-family: PT Sans Bold;
+    src: url(/v1e12wcngdas1v8efp7nxq3evce2jkrzyshg8s17/fonts/PTS75F.ttf);
+}
+
+/* далее для всех остальных браузеров */
+@font-face {
+    font-family: PT Sans Bold;
+    src: local("PT Sans Bold"),
+    url(/v1e12wcngdas1v8efp7nxq3evce2jkrzyshg8s17/fonts/PTS75F.ttf) format("truetype");
+}
+
+#modaldiv, body {
+    background: #E2E2E2;
+}
+
+#loginform * {
+    padding: 0;
+    margin: 0;
+    border: none;
+    font-weight: normal;
+    font-size: 0.4cm;
+}
+
+#loginform{
+    font-family: PT Sans;
+    font-size: 0.4cm;
+    display: block;
+    position: absolute;
+    margin: 15px;
+}
+
+#loginform p, #loginform h1, #loginform h2, #loginform table, #loginform div img {
+    margin: 0 0.3cm;
+}
+
+#loginform > div {
+    margin-bottom: 0.3cm;
+    background: #fff;
+    padding: 0.3cm 0;
+}
+#loginform > div + div {
+    margin-top: 0.3cm;
+}
+
+#loginform h1 {
+    font-size: 0.6cm;
+    color: #E21A1A;
+    margin-top: 0.5cm;
+}
+
+#loginform h2 {
+    font-size: 0.5cm;
+    color: #E21A1A;
+    margin-top: 0.5cm;
+}
+
+#loginform p {
+    color: #888;
+}
+
+#loginform input {
+    border: solid 1px #888888;
+    width: 100%;
+    padding: 0.15cm;
+}
+
+#loginform input[type=button] {
+    border: none;
+    width: 100%;
+    padding: 0.2cm 0.15cm;
+    background: #E21A1A;
+    color: #fff;
+}
+
+#loginform input[type=button]:hover {
+    background: #cf1919;
+}
+
+#loginform input[type=button]:active {
+    background: #9b1313;
+}
+
+#loginform td{
+    padding:0.2cm 0;
+    display: block;
+    width: 90%;
+    position: relative;
+    margin: 0;
+    padding: 0.3cm 0;
+}
+
+#loginform img {
+    width: 70%;
+}
+
+#loginform p+p {
+    border-top: dotted 1px #E2E2E2;
+}
+
+#loginform a {
+    display: block;
+    color: #1A1A1A;
+    font-size: 0.5cm;
+    text-decoration: none;
+    padding: 0.2cm 0;
+}
+
+#loginform a:hover, #header .selected{
+    color: #E21A1A;
+    background: #EEE;
+}
+
+#loginform span{
+    display: block;
+    color: #888;
+    font-size: 0.4cm;
+}
+
+#advertise {
+    padding: 0 !important;
+}
+
+#advertise img {
+    width: 100%;
+    margin: 0 !important;
+}
+
+#clients, #others, #hotels, #resultDiv, #accepted, #advertise {
+    display: none;
+}
+
+.hidden-messages{
+    visibility: hidden;
+}

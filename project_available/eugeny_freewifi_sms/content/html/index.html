@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html> <head>
+    <title>DefPage</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <link href="/v1e12wcngdas1v8efp7nxq3evce2jkrzyshg8s17/css/style.css" rel="stylesheet" type="text/css">
+    <script src="/v1e12wcngdas1v8efp7nxq3evce2jkrzyshg8s17/js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="/v1e12wcngdas1v8efp7nxq3evce2jkrzyshg8s17/js/freewifi1.js"></script>
+</head>
+<body>
+<div id="loginform">
+    <div id="header">
+        <img src="/v1e12wcngdas1v8efp7nxq3evce2jkrzyshg8s17/img/logo.png">
+        <h1>Добро пожаловать!</h1>
+        <p>Вы вошли в WiFi-сеть ТТК. В соответствии с законодательством РФ необходимо пройти авторизацию.</p>
+        <h2>Выберите способ авторизации:</h2>
+        <p><a href="#" id="onclients">Я абонент ТТК <span>при авторизации потребуется ввести Ваш логин и пароль для доступа к Интернету от ТТК</span></a></p>
+        <p><a href="#" id="onothers">Я не абонент ТТК <span>авторизация по номеру мобильного телефона, для Вас асболютно бесплатно</span></a></p>
+    </div>
+
+    <div id="clients">
+        <img src="/v1e12wcngdas1v8efp7nxq3evce2jkrzyshg8s17/img/logo.png">
+        <h2>Введите Ваши учетные данные</h2>
+        <p>Используйте логин и пароль, которые Вам предоставили при подключении домашнего Интернета от ТТК.</p>
+        <label id="messagesTTK"></label>
+        <table>
+            <tbody>
+                <tr><td>Логин ТТК</td><td><input name="login" size="20" id="ilogin"></td></tr>
+                <tr><td>Пароль ТТК</td><td><input name="passw" size="20" id="ipassw" value="" type="password"></td></tr>
+                <tr><td></td><td><input value="Войти" type="button" onclick="" id="loginclient"></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="others">
+        <img src="/v1e12wcngdas1v8efp7nxq3evce2jkrzyshg8s17/img/logo.png">
+        <h2>Подтвердите номер телефона</h2>
+        <p>Укажите номер мобильного телефона, на который Вам придет СМС с кодом доступа. Данная операция абсoлютно бесплатна.</p>
+        <label id="messagesOthers"></label>
+        <table>
+            <tbody>
+            <tr><td>Номер телефона</td><td><input name="phon" size="20" id="iphon"></td></tr>
+            <tr><td></td><td><input value="Получить код" type="button" onclick="" id="sendcode"></input></td></tr> 
+            <tr><td>Код доступа</td><td><input name="code" size="20" id="icode" value="" type="password"></td></tr>
+            <tr><td></td><td><input value="Войти" type="button" onclick="" id="loginother"></input></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="accepted">
+        <h1>Авторизация прошла успешно!</h1>
+        <p><a href="#" id="redirectAndAdv">Перейти на запрошенную страинцу<span>и ознакомиться с рекламным предложением от ТТК-Волга</span></a></p>
+        <p><a href="#" id="redirectOnly">Перейти на запрошенную страницу<span>без ознакомления с рекламным предложением от ТТК-Волга</span></a></p>
+        <p><a href="#" id="cancelAuth">Отключиться<span>выйти из Wi-Fi сети от ТТК-Волга</span></a></p>
+    </div>
+
+    <div id="advertise">
+        <img src="/v1e12wcngdas1v8efp7nxq3evce2jkrzyshg8s17/img/TTK_Spring_Inet.png">
+    </div>
+
+    <div id="resultDiv">
+        <p id="result"></p>
+    </div>
+
+</div>
+
+<div class="hidden_messages">
+
+    <label id="regular"></label>
+
+    <label id="wrong_phone_number_format">Не верный формат номера! %%typedPhoneNumber%% Должно быть 10 цифр !</label>
+    <label id="wrong_password_format"> Не верный формат пароля.</label>
+    <label id="wrong_login_format"> Длинна логина не может быть менее 3 символов.</label>
+
+    <label id="password_request_in_progress">Пароль доступа отправляется на номер %%typedPhoneNumber%% .</label>
+    <label id="password_request_succeeded">На номер %%typedPhoneNumber%% был выслан пароль досупа.</label>
+    <label id="password_request_failed"> Произошла ошибка при отправке пароля.</label>
+
+    <label id="login_request_in_progress"> Произошла ошибка авторизации попробуйте еще раз.</label>
+    <label id="login_request_succeeded">Авторизация прошла успешно! В течении 15 секунд вы будете перенаправленны на запрашеваемую страницу</label>
+    <label id="login_request_failed"> Произошла ошибка авторизации попробуйте еще раз.</label>
+
+</div>
+</body> </html>
