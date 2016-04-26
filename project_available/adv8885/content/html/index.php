@@ -10,7 +10,7 @@ $scripts_url=$project_conf['scripts_url'];
 $content =file_get_contents("".$project_conf['index_content']);
 
 $content = str_replace($static_content_url_PLACEHOLDER,$portal_conf['portal_permanent_url'].$project_conf['project_name'].$static_content_url,$content);
-$content = str_replace($script_url_PLACEHOLDER,$scripts_url_url,$content);
+$content = str_replace($script_url_PLACEHOLDER,$scripts_url,$content);
 
 echo $content; 
 
